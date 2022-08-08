@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown till JinPots' Unban</title>
+</head>
+
+<body>
+    <main class="bodymain">
+        <div id="thing">
+            <h1>Countdown till JinPots' Unban</h1>
+            <div id="countdown"></div>
+        </div>
+    </main>
+    <script>
+        var countDownDate = new Date("August 22, 2022 00:00:00").getTime();
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "JINPOTS SHOULD BE UNBANNED SOON OR DOING AN APPEAL LUL";
+            }
+        }, 1000);
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+        body {
+            background-color: #2e3440;
+        }
+
+        .bodymain {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 300px 0;
+            font-family: 'Raleway', sans-serif;
+
+        }
+
+        #countdown {
+            font-size: 50px;
+        }
+
+        #thing {
+            padding: 50px;
+            border-radius: 50px;
+            background: #d8dee9;
+            box-shadow: 20px 20px 60px #b8bdc6,
+                -20px -20px 60px #f8ffff;
+        }
+    </style>
+
+</body>
+
+</html>
